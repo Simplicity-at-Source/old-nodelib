@@ -3,14 +3,17 @@ var muonPort = 7777;
 
 var assert = require('assert');
 var url = require('url');
-var muon = require("../munode.js")(7777);
-var nucleus = require("./muon-test.js");
+var muon = require("../munode.js")();
 
 
 describe("test muon-node client ", function() {
+    
+  
 
     it ("basic test", function(done) {
         this.timeout(3500);
+        
+        var nucleus = require("./muon-test.js");
 
         nucleus.listen(muonPort);
 
