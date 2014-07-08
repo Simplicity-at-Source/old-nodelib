@@ -16,6 +16,7 @@ var callbacks = [];
 
 module.exports = function(overrideNucleus) {
     var nucleusUrl = globalNucleusUrl;
+    console.log("munode.js globalNucleusUrl="+  globalNucleusUrl)
 
     if (overrideNucleus != null) {
         nucleusUrl = overrideNucleus;
@@ -27,11 +28,11 @@ module.exports = function(overrideNucleus) {
     socket.on('connect', function () {
         console.log("muon socket connected");
     });
-    socket.on('error', function () {
-        console.log("balls ..");
+    socket.on('error', function (err) {
+        console.log("balls " + err);
     });
-    socket.on('reconnect_failed', function () {
-        console.log("reconnect_failed ..");
+    socket.on('reconnect_failed', function (err) {
+        console.log("reconnect_failed .." + err);
     });
     socket.on('disconnect', function () {
         console.log("disconnect ..");

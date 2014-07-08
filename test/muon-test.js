@@ -8,7 +8,7 @@ module.resourceResponse = [];
 
 exports.listen = function(port) {
 
-    console.log("Booting Stub Nucleus on " + port);
+    console.log("Booting Stub Nucleus on http://localhost:" + port);
 
     module.io = require('socket.io').listen(port);
 
