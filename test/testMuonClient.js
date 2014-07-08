@@ -1,11 +1,10 @@
 
+var muonPort = 7777;
+
 var assert = require('assert');
 var url = require('url');
-var muon = require("../munode.js");
+var muon = require("../munode.js")(7777);
 var nucleus = require("./muon-test.js");
-
-var muonPort = 18081;
-
 
 
 describe("test muon-node client ", function() {
@@ -14,17 +13,11 @@ describe("test muon-node client ", function() {
         this.timeout(3500);
 
         nucleus.listen(muonPort);
-        nucleus.onResourceQuery({}, [
-            { recordId:"gns", inspection: { NetworkSettings: { IPAddress:"111.111.111.111" }}},
-            { recordId:"mymodule", inspection: { NetworkSettings: { IPAddress:"111.111.111.111" }}},
-            { recordId:"simples", inspection: { NetworkSettings: { IPAddress:"111.111.111.111" }}},
-            { recordId:"proxy", inspection: { NetworkSettings: { IPAddress:"111.111.111.88" }}},
-        ]);
 
         //TODO, the standard containers ...
         //expect a response message of the correct form, including data from the docker api.
 
-        muon.on(function (event) {
+        nucleus.on(function (event) {
             assert.equal(event.resource, "container");
             assert.equal(event.action, "put");
             assert.equal(event.type, "runtime");
