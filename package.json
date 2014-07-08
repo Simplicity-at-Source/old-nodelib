@@ -2,7 +2,7 @@
     "name": "munode",
     "description": "Muon Reactive Client",
     "author": "Simplicity@Source",
-    "version": "0.0.1",
+    "version": "0.0.6",
     "keywords": [
       "muon",
       "microservices",
@@ -13,18 +13,13 @@
       "url": "https://github.com/Simplicity-at-Source/muon-node"
     },
     "dependencies": {
-        "async": "*",
-        "restify": "*",
         "msh": "*",
-        "restify": "*",
         "socket.io": "0.9",
-        "socket.io-client": "0.9",
-        "superagent": "*",
-        "url-template":"*"
+        "socket.io-client": "0.9"
     },
-    "main": ".",
+    "main": "./lib/munode",
     "bin": {
-      "msh": "./munode.js"
+      "msh": "./bin/munode"
     },
     "devDependencies": {
         "mocha": "*",

@@ -7,7 +7,7 @@ var url = require('url');
 var nucleus = require("./muon-test.js");
 nucleus.listen(muonPort);
 
-var muon = require("../munode.js")();
+var muon = require("../lib/munode.js")();
 
 describe("test muon-node client ", function() {
     
