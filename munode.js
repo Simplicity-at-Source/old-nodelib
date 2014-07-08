@@ -5,8 +5,9 @@ var msh = require("msh");
 var nucleusSocketPort =  process.env.MUON_NUCLEUS_PORT || 7777;
 var nucleusPort =  process.env.MUON_NUCLEUS_HTTP_PORT || 8080;
 var nucleusHost =  process.env.MUON_NUCLEUS_HOST || "localhost";
-console.log("SP_NUCLEUS_HOST=" + process.env.MUON_NUCLEUS_HOST);
-console.log("SP_NUCLEUS_PORT=" + process.env.MUON_NUCLEUS_PORT);
+
+console.log("munode.js SP_NUCLEUS_HOST=" + process.env.MUON_NUCLEUS_HOST);
+console.log("munode.js SP_NUCLEUS_PORT=" + process.env.MUON_NUCLEUS_PORT);
 
 var globalNucleusUrl =  "http://" + nucleusHost + ":" + nucleusSocketPort;
 var nucleusHttpUrl =  "http://" + nucleusHost + ":" + nucleusSocketPort;

@@ -1,7 +1,7 @@
 
 var assert = require('assert');
 var url = require('url');
-var muon = require("../munode.js");
+var muon = require("../munode.js")();
 var nucleus = require("./muon-test.js");
 
 var muonPort = 18081;
